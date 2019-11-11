@@ -17,6 +17,25 @@ public class Time {
 		second = 0;
 	}
 
+	public Time(int _hour, int _minute, int _second) {
+
+		if (_hour >= 0 && _hour <= 23) {
+			hour = _hour;
+		} else {
+			hour = 0;
+		}
+		if (_minute >= 0 && _minute <= 23) {
+			minute = _minute;
+		} else {
+			hour = 0;
+		}
+		if (_second >= 0 && _second <= 23) {
+			second = _second;
+		} else {
+			second = 0;
+		}
+	}
+
 	public void setHour(int _hour) {
 
 		if (_hour >= 0 && _hour <= 23) {
@@ -33,11 +52,11 @@ public class Time {
 	public void setMinute(int _minute) {
 		if (_minute >= 0 && _minute <= 60) {
 			minute = _minute;
+		} else {
+			minute = 0;
 		}
-		else {
-		minute = 0;
 	}
-	}
+
 	public int getMinute() {
 		return minute;
 	}
@@ -45,11 +64,11 @@ public class Time {
 	public void setSecond(int _second) {
 		if (_second >= 0 && _second <= 60) {
 			second = _second;
+		} else {
+			second = 0;
 		}
-		else {
-		second = 0;
 	}
-	}
+
 	public int getSecond() {
 		return second;
 	}
@@ -75,6 +94,11 @@ public class Time {
 		} else {
 			second = 0;
 		}
+	}
+
+	@Override
+	public String toString() {
+		return "[" + hour + ":" + minute + ":" + second + "]";
 	}
 
 }
